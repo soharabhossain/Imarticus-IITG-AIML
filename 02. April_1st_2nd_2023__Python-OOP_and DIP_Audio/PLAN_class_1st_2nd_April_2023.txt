@@ -1,0 +1,159 @@
+++++++++++++++++++++++++++++++++++++++++
+Plan for class: 1st & 2nd April 2023
+++++++++++++++++++++++++++++++++++++++++
+
+1st April 2023
+------------------
+
+Procedural Programming
+-----------------------
+input data 
+>>
+Programs (arithemetic & logical steps) >> functions/methods
+
+f1(param1, param2)
+ ...
+ ... 
+
+f2(param1, param2)
+ ....
+ ....
+
+fn()
+
+
+>>
+output
+
+------------------------------------------
+Exercise:
+Calculator
+ num1
+ num2
+
+ add()
+ sub()
+ mul()
+ div()
+------------------------------------------
+
+Object Oriented Programming (OOP)
+-----------------------------------
+
+Encapsulate data and methods into a single entity - object 
+ >> data (attributes) (Access control through modifiers)
+ >> methods (functionality) (Interface to the outer world)
+
+Real-life situations can be modeled by objects
+
+Class Person - data (attributes) 
+			   - name
+                           - height
+                           - weight
+                           - eye-color
+                           - hair-style
+                           - PAN  
+       -  methods (functionality)  
+                           - walk()
+                           - eat()
+                           - sing()
+                           - drive() 
+                           - getName()
+			   - setName()
+                           - BMI()   
+
+Objects of class Person
+obj1 = Person() 
+obj1.height // access attributes through object
+obj1.drive() // access behavious through methods
+
+obj2 = Person()
+obj2.setName(name) // assign values to attribute
+obj2.getName()  // access values of attribute through methods
+
+------------------------------------------------------
+
+Object Oriented Programming with Python
+ >> Class
+ >> Object
+ >> __init__ method and self
+ >> Getter and Setter methods
+ >> Abstraction and Encapsulation
+ >> Inheritance
+ >> Polymorphism
+ >> Operator Overloading
+_________________________________________________
+Other important Python concepts
+ >> Exception Handling
+ >> Iterator
+ >> Generator
+_________________________________________________
+ >> Decorator
+ >> Lambda function 
+ >> Object Serialization
+ >> File
+ >> Module
+ >> Package
+
++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+2nd April 2023
+---------------
+Digital Image Processing with Python and OpenCV
+-----------------------------------------------
+Image Formation
+Sampling and Quantization
+Image Processing – flipping, cropping, rotating, scaling
+Image statistics & Histogram
+Spatial Resolution
+Gray level/Intensity Resolution
+Spatial Filtering
+Convolution
+Smoothing, Sharpening (done)
+Color Space Conversion & Histogram 
+Thresholding for Binarization (done)
+Morphological Operations
+Image Gradient
+Bounding Box
+Sobel’s Edge Detection Operator (done)
+Template Matching
+Image Feature – Key-point and Descriptor
+Harris Corner Detector
+Object Detection with HoG
+Stream Video Processing with OpenCV
++++++++++++++++++++++++++++++
+
+
+1 bit >> 2^1 = 2 values 0 and 1
+
+2 bits >> 2^2 = 4 values (00, 01, 10, 11)
+
+3 bits >> 2^3=8  values(000, 001, .....111)
+
+
+8 bits >> 2^8 = 256 values (00000000 .... 11111111)
+
+(00000000)2 = (0)10 
+(11111111)2 = (255)10
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Relevant Resources
+--------------------
+
+https://docs.opencv.org/3.4/d6/d00/tutorial_py_root.html
+
+https://docs.opencv.org/3.4/dc/d0d/tutorial_py_features_harris.html

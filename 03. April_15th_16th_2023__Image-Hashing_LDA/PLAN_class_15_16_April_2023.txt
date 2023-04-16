@@ -1,0 +1,138 @@
+++++++++++++++++++++++++++++++++++++++++
+Plan for class: 15 & 16 April 2023
+++++++++++++++++++++++++++++++++++++++++
+
+15th April 2023
+----------------
+Hashing - concepts overview
+Image Hashing
+Image Search
+Other Applications
+Data Structures for Search -Binary Tree >> KD-Tree 
+Hands-on
+
+
+16th April 2023
+----------------
+KD-Tree based image search
+Linear Discriminant Analysis (LDA)
+LDA Hands-on
+
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+In CS - i) Searching
+        ii) Sorting
+
+
+Hashing >> 
+i) Cryptography (unique fingerprint from a message >> message-digest)
+
+ii) Hashing for efficient searching for data/record
+    >> ideally we are looking for a constant time search >> O(1) [Big-Oh notation - asymptotic notation]
+
+Computer Science
+
+Program = Data Structures + Algorithms
+
+Data Structures 
+ >> How to store the data?  
+ >> How efficient the access/retrieval of the data?
+
+n number of records
+Time O(n) (order of n - polynomial function of n with degree 1)
+
+Time O(n^2) (order of n - polynomial function of n with degree 2)
+
+Time O(2^n) (Exponential)
+
+search_key = C10901298t8 (comparing search key with some id of the record)
+
+C(mxp) = A(mxn) * B(nxp) (counting the number of scalar multiplication)
+
+Primitive operation/Basic operation
+
+
+---------------------------------------------
+
+Principles of Cryptography:
+i) Confidentiality >> crypto algorithms (AES)
+ii) Authentication (proof of origin of the message)
+    >> Digital Signature
+
+iii) Message Integirty (the content of the message is unchaged) >> message digest >> summary of a message (fixed length fingerprint) >> 128 bit message digest  (unique)
+
+
+Sender >> Receiver
+
+ 
+Input (Data) >> Program (Algorithm) >> Output (Data)
+
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+In-class Assignments:
+---------------------
+Assignment-1: Image search application
+A simple Python-based application for image search from an image database. (like Sequential search of image)
+
+Input: 
+> A directory containing a set of images.
+> A search image (search key).
+
+Output: 
+List of all the images in that directory that match with the search key 
+
+-------------------------------------------------------------
+
+Assignment-2: Duplicate image search application
+A simple Python-based application for duplicate image search from an image database. (Search for duplicate images in a given dataset).
+Input: 
+A directory containing a set of images.
+
+Output: 
+List of duplicate images in that directory
+
+-------------------------------------------------------------
+
+In computer science, a K-D tree (short for k-dimensional tree) is a space-partitioning data structure for organizing points in a k-dimensional space.
+A K-D Tree is a Binary tree in which each node represents a k-dimensional point. 
+Every non-leaf node in the tree acts as a hyperplane, dividing the space into two partitions. 
+This hyperplane is perpendicular to the chosen axis, which is associated with one of the K dimensions.
+
+-------------------------------------------------------------
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+Relevant Resources
+--------------------
+1. ImageHash - An image hashing library written in Python. https://github.com/JohannesBuchner/imagehash
+
+2. Perception - a flexible, well-documented, and comprehensively tested tooling for perceptual hashing research, development, and production use. 
+https://github.com/thorn-oss/perception
+
+3.The Hacker Factor Blog - related to Image Hashing
+https://www.hackerfactor.com/blog/index.php?/archives/529-Kind-of-Like-That.html
+
+4. Space Partitioning Data Structures - KD-Tree
+https://medium.com/smucs/a-look-into-k-dimensional-trees-290ec69dffe9
+
+5. Solving the Nearest Neighbor Problem using Python
+https://johnlekberg.com/blog/2020-04-17-kd-tree.html
+
+6. Image Search Engine using Image Hashing technique in Python
+https://medium.com/analytics-vidhya/image-search-engine-using-image-hashing-technique-in-python-e6749dacc8f7
+
+7. Image Data Source - Animal images for similarity search from Kaggle
+https://www.kaggle.com/datasets/okeaditya/animals-data?resource=download
+
+8. Dimension Reduction
+https://www.intechopen.com/chapters/17174
+
+9. Dimensionality Reduction for Machine Learning
+https://neptune.ai/blog/dimensionality-reduction
+
+10. Linear Discriminant Analysis In Python
+https://towardsdatascience.com/linear-discriminant-analysis-in-python-76b8b17817c2
+
