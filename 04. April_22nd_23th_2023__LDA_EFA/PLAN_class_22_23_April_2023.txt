@@ -1,0 +1,45 @@
+++++++++++++++++++++++++++++++++++++++++
+Plan for class: 22 & 23 April 2023
+++++++++++++++++++++++++++++++++++++++++
+
+22th April 2023
+----------------
+
+Feature Selection Techniques:
+
+# Intrinsic => Tree-based models (Decision Tree, Random Forest) >> Entropy - Information Gain /Gini impurity score
+
+# Filter-based methods
+ > statistics (x and y) y = 2*x + 100
+ > feature importance 
+
+# Wrapper methods
+ > Recursive Feature Elimination
+
+
+# Feature Selection
+LDA - Feature Selection (dimension reduction)- features projected to lower dimension (image data - visualize features in 2D)
+
+>> LDA experiment with synthetic data (a systematic way to find the best value for n for lowder dimension projection)
+
+>> LDA - experiment with a real dataset
+(Compare PCA and LDA - project and visualize data in lower dimensional space)
+
+
+# RFE on synthetic data
+
+# SelectKBest on synthetic data
+
+
+
+Related Links
+----------------
+1. Dimension Reduction
+https://www.intechopen.com/chapters/17174
+
+2. Dimensionality Reduction for Machine Learning
+https://neptune.ai/blog/dimensionality-reduction
+
+3. Linear Discriminant Analysis In Python
+https://towardsdatascience.com/linear-discriminant-analysis-in-python-76b8b17817c2
+
