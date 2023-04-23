@@ -1,0 +1,157 @@
+++++++++++++++++++++++++++++++++++++++++
+Plan for class: 22 & 23 April 2023
+++++++++++++++++++++++++++++++++++++++++
+
+22nd April 2023
+----------------
+
+Feature Selection Techniques:
+-------------------------------
+# Intrinsic/Embedded methods 
+  => Tree-based models (Decision Tree, Random Forest) 
+     >> Entropy - Information Gain /Gini impurity score
+  => LASSO (L1-regularization for feature selection)
+
+# Filter-based methods
+ > statistics (x and y) y = 2*x + 100
+ > Correlation coefficient
+ > feature importance (information gain)
+ > Variance threshold
+ > Chi-square test
+
+# Wrapper methods
+ > Recursive Feature Elimination
+
+
+# Feature Selection (Dimension Reduction - PCA/LDA etc.)
+  (projecting features to a lower dimensional space)
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+In-class Coding Demo:
+---------------------
+# LDA - Feature Selection (dimension reduction)- features projected to lower dimension (image data - visualize features in 2D)
+
+# LDA experiment with synthetic data (a systematic way to find the best value for n for lower dimension projection)
+
+# LDA - experiment with a real dataset
+(Compare PCA and LDA - project and visualize data in lower dimensional space) [Home task]
+
+# Recursive Feature Elimination on synthetic data
+
+# Select top-k-features -- SelectKBest on synthetic data
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+23rd April 2023
+----------------
+
+Factor Analysis
+----------------
+
+> Concept of Observed vs. Latent Variables
+
+> Shared variance (communality)
+
+> Exploratory Factor analysis
+ >> Choosing the Number of Factors with Scree Plot (number of factors vs. the Eigenvalues)
+
+> Dimension reduction (with latent variable)?
+
+
+Coding Examples:
+
+ # Personality Trait
+ # Airline Passenger survey data
+ 
+
+
+
+
+Dataset
+
+ X =>> feature variables (x1, x2) >> observed variables
+ y =>> target variable
+
+Machine Learning model
+ >> relation between X and y
+
+ y = coff1 * x1 + coff2 * x2 + bias
+
+Loss function: sum over all the data points in the training dataset 
+(y - y_hat)^2
+
+Iterative training (optimize the loss function with some optimization algorithm - Gradient Descent)
+
+
+
+Dataset given to us
+Restaurant
+
+> Food types (variety)
+> Taste of Food
+> Cleanliness
+> Waiting Time
+> Staff Behaviour
+> Freshness of Food
+> Food Temperature
+
+Hidden/Latent variables:
+  >> Food Quality
+  >> Quality of Service
+
+Dimension Reduction
+
+Exploratory Factor Analysis
+
+
+
+Communality:
+-------------
+Shared variance is represented by Communality - it is the proportion of each variable’s variance that can be explained by the factors (latent variables).
+
+In factor analysis, communality refers to the amount of variance in an observed variable that can be explained by the underlying factors in the model. It is a measure of the degree to which an observed variable is related to the other variables in the dataset, and hence how well it represents the underlying construct or concept being measured.
+
+Communality can be estimated as the sum of the squared factor loadings for an observed variable. 
+In other words, it represents the proportion of variance in the observed variable that is accounted for by the factors in the model. 
+A high communality value indicates that the observed variable is well-represented by the underlying factors, while a low communality value indicates that the observed variable is not well-represented by the factors and may not be a good indicator of the underlying construct.
+
+It is used to determine which observed variables should be retained in the model. Typically, observed variables with high communality values are retained, while those with low communality values may be dropped from the model.
+
+
+Cronbach's Alpha:
+-----------------
+The threshold for Cronbach's alpha value varies depending on the context of the research and the type of measurement instrument being used. Generally, a Cronbach's alpha value of 0.70 or higher is considered acceptable for research purposes. However, in some cases, a higher threshold may be required, especially for instruments used in high-stakes situations such as medical diagnosis or psychological assessment. It is important to note that the decision on what threshold to use should be based on the specific research context and the purpose of the instrument being used.
+
+
+Bartlett's sphericity test
+-----------------------------
+Bartlett's sphericity test is a statistical test used in factor analysis to assess whether the correlation matrix of the observed variables is appropriate for conducting a factor analysis. It tests the null hypothesis that the correlation matrix is an identity matrix, which would mean that the observed variables are uncorrelated with each other and therefore cannot be used to form meaningful factors.
+
+If the p-value associated with the Bartlett's sphericity test is less than the chosen level of significance (usually 0.05), then the null hypothesis is rejected, indicating that the correlation matrix is not an identity matrix and is therefore suitable for conducting factor analysis. On the other hand, if the p-value is greater than the chosen level of significance, then the null hypothesis is not rejected, indicating that the correlation matrix is an identity matrix and factor analysis is not appropriate.
+
+In summary, Bartlett's sphericity test is a useful tool in factor analysis as it helps researchers determine whether the observed variables are suitable for factor analysis or not.
+
+
+
+Related Links
+----------------
+1. Peronality Traits - Dataset Link
+https://vincentarelbundock.github.io/Rdatasets/csv/psych/bfi.csv
+
+2. Factor Analyzer library
+https://pypi.org/project/factor-analyzer/
+
+3. Factor Analyzer - API Docs 
+https://factor-analyzer.readthedocs.io/en/latest/factor_analyzer.html
+
+4. sklearn.decomposition.FactorAnalysis
+https://scikit-learn.org/stable/modules/generated/sklearn.decomposition.FactorAnalysis.html
+
+5. pingouin.cronbach_alpha
+https://pingouin-stats.org/build/html/generated/pingouin.cronbach_alpha.html
+
+6. Introduction to Factor Analysis in Python
+https://www.datacamp.com/tutorial/introduction-factor-analysis
+
+

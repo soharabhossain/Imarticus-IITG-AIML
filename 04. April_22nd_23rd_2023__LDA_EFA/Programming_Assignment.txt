@@ -1,0 +1,22 @@
+Programming Assignment
+------------------------
+1. Generate data synthetically (n-dimensional)
+2. Apply feature subset selection (k-dimensions)
+ k < n
+ 
+Part-1:
+ > Apply feature subset selection algorithms (k-dimensions) 
+   (Recursive Feature Elimination)
+   (SelectKBest features)
+ > Build a ML model with these k-features and test the accuracy
+
+Part-2:
+ > Dimensional reduction > k-dimension
+  (PCA)
+  (LDA)
+ > Build a ML model with these k-features and test the accuracy
+
+
+Compare the performance of Part-1 and Part-2.
+
+
