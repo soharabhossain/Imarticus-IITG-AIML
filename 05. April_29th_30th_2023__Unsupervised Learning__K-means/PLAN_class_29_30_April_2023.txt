@@ -1,0 +1,98 @@
+++++++++++++++++++++++++++++++++++++++++
+Plan for class: 29 & 30 April 2023
+++++++++++++++++++++++++++++++++++++++++
+
+29th April 2023
+----------------
+
+Supervised vs. Unsupervised Learning
+
+Supervised Learning: 
+  X => data points with features (independent variable)
+  y => target labels (dependent variable) (human annotated labels)
+
+ > Regression Problem (Linear Regression) => y variable is numeric and continuous 
+
+ > Classification Problem (Logistic Regression) => y variable is categorical
+           IRIS flower classification => Setosa, Versicolor, Verginica
+                                          0,        1,        2
+  loss = y_pre - y_actual
+
+
+General Purpose Artificial Intelligence >> achieving human-level intelligence
+Special Purpose AI
+
+
+
+Unsupervised Learning:
+-----------------------
+X => feature vectors in an n-dimensional space (only X is given)
+(we don't have any y)
+
+Unsupervised Learning
+ > Clustering (grouping of data)
+ > Association Rules (Apriori algorithms)
+ > PCA
+ > Autoencoders (Artificial Neural Networks)
+
+Applications:
+  > News Sections (topic modeling)
+  > Computer Vision - object detection
+  > Medical imaging 
+  > Anomaly detection 
+  > Customer personas
+  > Recommendation Engines
+
+
+Clustering
+ > Partition-based Clustering - K-means algorithm
+ > Coding example - step-by-step implementation
+ > Using sklearn
+ > Effect of different initializations
+ > Goodness measure of a cluster - WCSS
+ > Choosing the optimal number of clusters - k (Elbow plot)
+ 
+
+30th April 2023
+----------------
+Unsupervised Learning
+> Color image segmentation (color quantization)
+> How good is the culstering: Silhouette score
+> Coding examples - working with a real dataset
+
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+Exclusive and Overlapping Clustering
+Exclusive clustering is a form of grouping that stipulates a data point can exist only in one cluster. 
+This can also be referred to as “hard” clustering. The K-means clustering algorithm is an example of exclusive clustering.
+
+Overlapping clusters differs from exclusive clustering in that it allows data points to belong to multiple clusters with separate degrees of membership. 
+“Soft” or fuzzy k-means clustering is an example of overlapping clustering.
+
+----------------------------------------
+Other Clustering Methods:
+> Hierarchical Clustering
+  >> Agglomerative (bottoms-up approach)  
+  >> Divisive (top-down approach)
+> DBScan (density-based clustering)
+> Probabilistic Clustering (GMM)
+
+
+Related Links
+----------------
+1. Kmeans in Scikit-learn library
+https://scikit-learn.org/stable/modules/generated/sklearn.cluster.KMeans.html
+
+2. What is unsupervised learning?
+https://www.ibm.com/topics/unsupervised-learning
+
+3. Clustering - Scikit Learn
+https://scikit-learn.org/stable/modules/clustering.html#clustering-evaluation
+
+4. A demo of K-Means clustering on the handwritten digits data
+https://scikit-learn.org/stable/auto_examples/cluster/plot_kmeans_digits.html#sphx-glr-auto-examples-cluster-plot-kmeans-digits-py
+
+5. Clustering evaluation metrics
+https://scikit-learn.org/stable/modules/clustering.html#clustering-evaluation
+  
