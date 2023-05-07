@@ -1,0 +1,269 @@
+++++++++++++++++++++++++++++++++++++++++
+Plan for class: 6th & 7th May 2023
+++++++++++++++++++++++++++++++++++++++++
+
+6th May 2023
+-------------
+1. Parameter Estimation with K-means 
+2. Membership Weighted K-means 
+3. Hierarchical Clustering
+4. Clustering Streaming Data
+5. Clustering Metrics
+
+Offline => the entire data is available to us when we start model training
+Online learning
+
+
+Hierarchical Clustering >> 
+Create cluster by creating a hierarchy of clusters >>
+nested clusters
+
+At the top of the hierarchy > single cluster
+
+1. Agglomerative clustering:
+This algorithm starts with individual data points as clusters and successively mergers them together.
+
+2. Divisive clustering
+This algorithm starts wit a single cluster containing all the data points and sucessively splits them into smaller clusters.
+
+Dendogram
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+
+7th May 2023
+----------------
+Association Rule Mining - Market Basket Analysis
+Frequent Itemset Mining
+
+
+# Apriori Algorithm:
+It is based on the Apriori principle:
+If an intemset is frequent then all of its subsets must also be frequent.
+
+
+First Phase: Frequent Itemset Mining
+-------------------------------------
+
+Set of items being purchased together.
+
+1-item set : {milk}, {bread}, {butter}, {}
+Apply pruning to discard some of the items
+Those sets that qualify the minimum threshold will go for the next round
+
+2-items set : {milk, bread}, {bread, butter}
+Apply pruning to discard some of the items
+Those sets that qualify the minimum threshold will go for the next round
+
+3-items set : {milk, bread, butter}, {}
+Apply pruning to discard some of the items
+Those sets that qualify the minimum threshold will go for the next round
+
+k-items set
+
+
+Second Phase:
+Generate the association rules.
+
+
+
+FP-growth Algorithm
+Coding demo
+
+
+Database < Transaction < Bread, Butter, Milk 
+
+Database of many such transactions
+
+Every row is representing one transaction
+Columns -> items being purchased by the customer.
+
+
+Association Rules:
+
+Propositional logic
+ p->q
+ if p then q
+
+p is the antecedent
+q is the consequent
+
+
+Bread -> Milk, Butter
+Bread -> Butter
+Bread -> Egg
+
+
+Applications:
+1. Recommendation systems
+2. Market Basket Analysis
+3. Health Care 
+
+
+----------------------------------------------
+
+# Support:
+support(itemset) = (number of transactions conataining the itemset) / (total number of transactions in the database)
+
+The support value represents the frequency of occurrence of the itemset in the database.
+
+
+# Confidence:
+Confidence measures the realiability of the rule.
+
+confidence(A->B) = support(A U B)/support(A)
+
+Ratio of the number of transactions containing both the itemset A and B to the number of transactions containing A.
+
+
+# Lift:
+Lift is a measure of the strength of association between the antecedent and the consequent.
+
+lift(A->B) = confidence(A->B)/support(B)
+           = support(A U B)/ (support(A)*support(B))   
+
+Define a threshold for the minimum support value.
+
+Frequent Itemset:
+An itemset whose support is greather than or equal to the minimum support threshold.
+
+--------------------------------------------------------
+
+FP Growth Algorithm
+--------------------
+Frequent Pattern Growth Algorithm
+Steps:
+From the given database of transactions (each with list of items purchased)
+1. Find the frequency of each item.
+2. Find a frequent pattern set with the items that satisfy the minimum support count.
+3. Sort the items in descending order of their frequencies.
+4. Find the ordered item sets (from the list of transactions)
+5. Insert all the ordered item sets into a Trie data structure (Tree like structure)
+6. For each item find the Conditional Pattern Base
+7. Find the conditional frequent pattern tree
+5. Generate the frequent pattern set.
+6. Create the association rules from the set of frequent patterns.
+
+
+
+-----------------------------------------
+
+Clustering Metrics
+
+> Intrinsic Measures: These measures do not require ground truth labels (applicable to all unsupervised learning results)
+ >> Silhouette Coefficient
+ >> Calinski-Harabasz Index
+ >> Davies-Bouldin Index
+
+
+ > Extrinsic Measures: These measures require ground truth labels, which may not be available in practice
+ >> Rand Index
+ >> Mutual Information
+ >> V-measure
+ >> Fowlkes-Mallows Scores
+
+
+Calinski and Harabasz score:
+-----------------------------
+It is also known as the Variance Ratio Criterion.
+The score is defined as ratio of the sum of between-cluster dispersion and of within-cluster dispersion.
+Higher is better.
+
+
+Davies-Bouldin score
+---------------------
+The score is defined as the average similarity measure of each cluster with its most similar cluster, where similarity is the ratio of within-cluster distances to between-cluster distances. 
+Thus, clusters which are farther apart and less dispersed will result in a better score.
+
+The minimum score is zero, with lower values indicating better clustering.
+
+
+Parametric Clustering
+---------------------
+Parametric clustering is a type of clustering method that assumes a specific probability distribution function for the data. In other words, it assumes that the data is generated from a known distribution, and tries to fit the parameters of the distribution to the data. The most commonly used parametric clustering method is the K-means clustering algorithm. The K-means algorithm assumes that the data points are generated from a Gaussian distribution with unknown means and variances, and tries to estimate the means and variances by clustering the data. Other examples of parametric clustering methods include Gaussian mixture models and the expectation-maximization algorithm.
+
+
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+
+Example:
+In supermarkets, association rules are used for discovering the regularities between the products where the transaction of the products are on a large scale. 
+For example, the rule 
+
+{comb, hair oil}→{mirror} 
+
+represents that if a customer is buying comb and hair oil together then there are higher chances that he will buy the mirror also. 
+Such rules can play a major role in marketing strategies.
+
+
+
+
+Eclat Algorithm
+----------------
+The Eclat algorithm is another popular algorithm for finding frequent itemsets in a transactional dataset. It stands for Equivalence Class Clustering and bottom-up Lattice Traversal. 
+The idea behind the Eclat algorithm is to perform a depth-first search on a prefix tree that represents the set of all frequent itemsets, where the prefix of each path corresponds to a subset of items. 
+The algorithm uses a depth-first search to generate all frequent itemsets by intersecting the transactions in the dataset with each itemset prefix in the tree.
+
+Eclat is similar to the Apriori algorithm, but it doesn't generate candidate itemsets explicitly. 
+Instead, it uses vertical data format, where each item is represented by a column and each row represents a transaction. 
+The algorithm then uses a depth-first search to generate all frequent itemsets by intersecting the transactions in the dataset with each itemset prefix in the tree.
+
+Eclat algorithm has the advantage of being able to handle large datasets more efficiently than the Apriori algorithm, especially when the itemsets are long and sparse. 
+However, it requires the data to be represented in the vertical format, which can be a limitation in some scenarios.
+
+The basic steps of the Eclat algorithm are:
+
+1. Generate all possible 1-itemsets, i.e., itemsets with one item each.
+2. For each itemset, compute its support by counting the number of transactions containing the itemset.
+3. Discard all itemsets with support less than the minimum support threshold.
+4. Generate all possible 2-itemsets by intersecting the transactions containing each 1-itemset.
+5. Compute the support of each 2-itemset.
+6. Discard all 2-itemsets with support less than the minimum support threshold.
+7. Generate all possible k-itemsets by intersecting the transactions containing each (k-1)-itemset.
+8. Compute the support of each k-itemset.
+9. Discard all k-itemsets with support less than the minimum support threshold.
+10. Stop when no more frequent itemsets can be generated.
+
+The frequent itemsets generated by the Eclat algorithm can be used to generate association rules, similar to the Apriori algorithm.
+
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+Related Links
+----------------
+1. MiniBatchKMeans
+https://scikit-learn.org/stable/modules/generated/sklearn.cluster.MiniBatchKMeans.html
+
+2. Hierarchical Clustering
+https://bookdown.org/content/f097ddae-23f5-4b2d-b360-ad412a6ca36a/chapter-2.-hierarchical-clustering.html#wards-method
+
+3. 7 Evaluation Metrics for Clustering Algorithms
+https://towardsdatascience.com/7-evaluation-metrics-for-clustering-algorithms-bdc537ff54d2
+
+4. Clustering performance evaluation - Sklearn 
+https://scikit-learn.org/stable/modules/clustering.html#clustering-performance-evaluation
+
+5. Apriori Algorithm for Association Rule Learning — How To Find Clear Links Between Transactions
+https://towardsdatascience.com/apriori-algorithm-for-association-rule-learning-how-to-find-clear-links-between-transactions-bf7ebc22cf0a#:~:text=Now%2C%20lift%20is%20simply%20a,0.75%2F0.5%3D1.5).
+
+6. Apriori vs FP-Growth in Market Basket Analysis – A Comparative Guide
+https://analyticsindiamag.com/apriori-vs-fp-growth-in-market-basket-analysis-a-comparative-guide/#:~:text=Apriori%20generates%20the%20frequent%20patterns,one%20item%20at%20a%20time.
+
+7. Difference between Apriori and FP Growth
+https://www.rgpvonline.com/answer/data-mining/4.html
+
+8. FP Growth — Frequent Pattern Generation in Data Mining with Python Implementation
+https://towardsdatascience.com/fp-growth-frequent-pattern-generation-in-data-mining-with-python-implementation-244e561ab1c3
+
+
+9. Apriori — Association Rule Mining In-depth Explanation and Python Implementation
+https://towardsdatascience.com/apriori-association-rule-mining-explanation-and-python-implementation-290b42afdfc6
+
+10.MLxtend Library
+https://rasbt.github.io/mlxtend/user_guide/frequent_patterns/apriori/
+
+https://rasbt.github.io/mlxtend/user_guide/frequent_patterns/fpgrowth/#more-examples
+
