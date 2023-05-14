@@ -1,0 +1,350 @@
+
+13th & 14th May 2023
+----------------------
+Probabilistic Latent Semantic Model (PLSA) - Theory + Practical
+
+List of topics to be covered:
+> EM Algorithms
+> Aspect Model of PLSA
+> Topic Distribution as Dimensionality Reduction
+
+
+Topic Modeling
+GMM with EM
+LSA - Coding examples
+
+Bag-of-Words
+TFIDF
+N-grams
+Coding demo TFIDF 
+Text classification (social media sentiment analysis)
+PLSA coding demo
+LDA coding demo - news group data (not covered)
+LSA-LDA from Gensim library (not covered)
+
+
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+Corpus of textual documents
+
+Document >> collection of words
+
+Document-Term Matrix
+
+Along the rows of this matrix?
+
+M number of document present in the corpus
+
+Document-Term Matrix (MxN)
+M number of Rows
+N number of columns
+
+N = Number of unique words present in the corpus (considering all the documents)
+
+
+Preprocessing of text is required:
+This => this
+
+Stopwords
+
+
+
+    w1   w2   w3 .....  wN
+d1  1    0     1 ...... 1
+d2  0    1     0 ...... 0
+...
+dM
+
+each document is a vector of dimension N
+
+Bag of Words
+
+    w1   w2   w3 .....  wN
+d1  1    0     2 ...... 1
+d2  0    2     0 ...... 0
+...
+dM
+
+
+    w3   w1   w2 .....  wN
+d1  2    1     0 ...... 1
+d2  0    0     2 ...... 0
+...
+dM
+
+
+---------------------------------------
+
+Term Frequency (TF):
+
+TF(t,d) = (total number of times term t is present in document d)/(total number of terms present in document d)
+
+We can compute TF for each term in the vocabulary for each document.
+
+
+Inverse Document Frequency (IDF):
+
+IDF(t) = log((number of documents)/(number of documents with term t))
+
+We compute IDF for each term in the in the corpus.
+
+Term Frequency-Inverse Document Frequency (TF-IDF):
+TF-IDF(t, d) = TF(t,d) * IDF(t)
+
+
+---------------------------------------------------------------
+
+Language Model
+
+
+Context is missing when we deal with a single word/term.
+
+
+Text Processing (NLP):
+
+Understanding
+ > Syntax (Grammar) >> <subject> <verb> <object>
+ > Semantic (meaning)
+
+AI tasks >> Language processing/understanding
+
+ NLP > natual scene undestanding
+ Computer Vision > object detection from video
+
+AI > GPAI
+   > SPAI
+
+
+
+N-grams:
+
+
+Document:
+
+a quick brown fox jumps over the lazy dogs
+
+N=1 (unigrams)
+
+a
+quick
+brown
+fox
+jumps
+over
+the
+lazy 
+dogs
+
+
+N=2 bigram
+a quick
+quick brown
+brown fox
+fox jumps
+jumps over
+over the
+the lazy
+lazy dogs
+
+
+N=3 trigram
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+Unsupervised Machine Learning
+Topic Modeling:
+
+NLP -> input data text
+
+> Unsupervised model
+> Text analysis
+> Understaning the topics
+
+
+We have been given a set of documents (textual):
+
+Documents >> paragraphs >> collection of sentences >> a set of words >> set of characters
+
+A large Corpus of such documents.
+
+Topic >> Hidden/Latent concepts
+
+Title/Content >> words
+
+Sports : play/ team/ game
+
+Topics >> Words
+
+Words -> Topics
+
+Data:
+
+List of Documents
+Words (vocabulary of words)
+
+
+Documents:
+dm; m = 1, 2, ......M
+
+Words: 
+wn; n = 1, 2, .....N
+
+Topics:
+zq; q = 1, 2, .....Q
+
+Dimension Reduction:
+Q << M
+Q << N
+
+
+Document is a mixture of Topics
+
+Topic-1
+Topic-2
+Topic-3
+
+Document (0.7, 0.2, 0.1)
+
+
+Topics are indentified by the Words
+
+
+document -> latent variable -> words
+
+Aspect Model (PLSA)
+
+
+Scan all the documents and create a vocabulary of unique words present in the corpus.
+
+
+Word-Document Co-occurrence Matrix
+/ Term-Document Matrix
+
+   d1   d2  d3 ...dM
+w1  2    0   3 
+w2
+w3
+...
+wN
+
+Latent Semantic Analysis/Indexing
+
+Term Document matrix decomposed into three matrics
+
+Term-Document Matric = Term-Topic Matrix x Topic importance x Topic-Document
+
+
+PLSA:
+------
+We want to model 
+P(D, W) 
+
+
+We sample a document first
+Based on the document we sample a topic
+Based on the topic we sample a word
+
+d -> z -> w
+P(d) > distibution of the documents
+P(z|d) 
+P(w|z)
+
+We associate z with (d, w), describe a generative process where we select a document, thena topic and finally a word from that topic.
+
+We select the document from the corpus P(d).
+
+For every word in the selected document 
+dn, word selected wi
+
+> Select a topic zi from a conditional distribution with probability P(zi|dn)
+> Select a word with probability P(w|zi)
+
+
+
+Document 1: This is a beautiful day.
+Docuemnt 2: This light is bright light.
+
+Vector representation 
+Bag of Words
+
+            This is a beautiful day light bright
+Document 1:  1    1 1  1         1   0      0  
+Document 2:  1    1  0  0        0   2      1
+
+P(D, W) = P(D) Sum over all Zs (P(Z|D)P(W|Z))
+
+
+Estimating the Parameters :
+
+EM Algorithm:
+-------------
+ Steps-1:
+ E-step: We compute the posterior probabilities 
+for the latent variables.
+
+ Step-2: 
+ M-step: Model parameters are updated according to the computed probabilities in the E-step.
+
+ Repeat step-1 and step-2 until convergence.
+ 
+EM is a powerful algorithm that can be used when you have a model, you have data and some hidden variables.
+
+E-step: Estimating the prbabilities of the hidden variables (topics)
+
+M-step: Updating the model parameters
+We take the count of the words and weight them with the probabilities computed in the E-step.
+
+Repeat the E and M steps repetitively (iteratively).
+
+Eventually it will converge and you get the trained topic model.
+
+
+Applications:
+-------------
+> Social Network Analysis
+> Dialogue manager for chatbots
+> Categorization and classification of text
+10k document annotated >> labels
+1 million >> LSA - topics >> labels
+> Recommendation system
+> Exploratory Search
+> News flow aggregation and analysis
+
+
+
++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+Related Resources Links:
+------------------------
+
+1. Topic Modeling: Art of Storytelling in NLP
+https://medium.com/technovators/topic-modeling-art-of-storytelling-in-nlp-4dc83e96a987
+
+2. Part 17: Step by Step Guide to Master NLP – Topic Modelling using pLSA
+https://www.analyticsvidhya.com/blog/2021/06/part-17-step-by-step-guide-to-master-nlp-topic-modelling-using-plsa/
+
+3. Complete Guide to Expectation-Maximization Algorithm
+https://www.analyticsvidhya.com/blog/2021/05/complete-guide-to-expectation-maximization-algorithm/
+
+4. Latent Semantic Indexing using Scikit-Learn
+https://machinelearninggeek.com/latent-semantic-indexing-using-scikit-learn/
+
+5. Dataset: A Million News Headlines
+https://www.kaggle.com/datasets/therohk/million-headlines/code?resource=download
+
+6. Quick Introduction to Bag-of-Words (BoW) and TF-IDF for Creating Features from Text
+https://www.analyticsvidhya.com/blog/2020/02/quick-introduction-bag-of-words-bow-tf-idf/
+
+7. NLTK Toolkit
+https://www.nltk.org/
+
+8. PLSA - A python implementation of Probabilistic Latent Semantic Analysis
+https://github.com/yedivanseven/PLSA
+
+
+
+
+
+
