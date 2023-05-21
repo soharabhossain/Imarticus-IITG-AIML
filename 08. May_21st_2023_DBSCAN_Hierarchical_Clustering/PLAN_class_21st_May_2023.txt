@@ -1,0 +1,90 @@
+
+Sunday 21st May 2023
+--------------------
+
+> Understanding the limitation of K-means
+  >> Coding demo
+
+Density-Based Spatial Clustering of Applications with Noise (DBSCAN)
+
+> DBSCAN basics
+  >> Core/Border/Noise points
+  >> How does the algorithm work?
+
+
+  >> eps: epsilon >> defining the spatial neighbourhood
+  >> min_samples : minimum sample count
+
+
+Comparison between K-means and DBSCAN:
+---------------------------------------
+
+Clustering Approach:
+
+K-means - Partitioning data based of distance computation from a centroid.
+DBSCAN - density-based clusterting
+
+Handle shapes/size of the cluster:
+Spherical and similar size - K-means
+
+DBSCAN - arbitrary shape and sizes of the cluster (ability to diffentiate between nested clusters)
+
+Number of clusters:
+K-means: Pre-specified number of clusters
+DBSCAN automatically determines the number of clusters of different densities
+
+Handling outliers:
+K-means does not handle outliers/noise
+DBSCAN can identify the outliers/noise
+
+Parameter sensitivity:
+
+K-means is sensitive to the initial placement of the centroids, may converge to different solutions based on the initial configuration.
+
+DBSCAN: 
+ > epsilon (defining the spatial neighbourhood)(the radius withing which the points are considered neighbours)
+
+ > minimum_sample_count - minimum number of data points required to form a dense region.
+
+ 
+
+
+
+
+
+
+
+
+
+> Benefits of DBSCAN over K-means algorithm
+> Coding demo
+> Hyperparameters of the model
+  >> eps: epsilon
+  >> min_samples : minimum sample count
+
+
+> Hierarchical Clustering
+  >> Agglomerative : repititive merge
+  >> Divisive : repititive split
+ > Dendrogram
+
+
+
+
+
+
+Related Resources:
+-------------------
+1. sklearn.cluster.DBSCAN
+https://scikit-learn.org/stable/modules/generated/sklearn.cluster.DBSCAN.html
+
+2.sklearn.cluster.AgglomerativeClustering
+https://scikit-learn.org/stable/modules/generated/sklearn.cluster.AgglomerativeClustering.html#sklearn.cluster.AgglomerativeClustering
+
+3. Hierarchical clustering
+https://dataaspirant.com/hierarchical-clustering-algorithm/
+
+4. DBSCAN Parameter Estimation Using Python
+https://medium.com/@tarammullin/dbscan-parameter-estimation-ff8330e3a3bd
+
+
