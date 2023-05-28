@@ -1,0 +1,90 @@
+28th May 2023
+--------------
+
+Mean-shift Algorithm
+-----------------------
+> Given a bunch of data points n-dimensional space
+> it defines a neighbourhood/regions (e.g. a circular region in a 2D space)
+
+what is the shape of the neighbourhood 
+  - circle (radius - small vs large)
+  - rectangle (h, w)
+
+> it computes the mean of the data points falling within that region
+> then iteratively shifts the mean in the direction of the maximum density (mode)
+
+
+> Understanding Mean-shift Clustering
+> Coding Demo
+> Image Color Segmentation with MeanShift
+
+
+> Project Discussion
+ >> Face Detection Recognition
+ >> Face Matching
+ >> Factor Analysis
+ >> Speech Classification
+
+
+
+
+Project-1
+------------
+
+Face Recognition with PCA
+
+1. Build a matrix by reading all the training images (FaceMatrix). Each image is converted into a 1D vector in this matrix (e.g. if there are N number of sample images and M be the dioemsnion of each image after conversion to 1D), the FaceMatrix will have a dimension of NxM.
+
+
+2. Apply PCA and take the first K Principal Components as EigenFaces.
+Use explained variance > cumulative variance >> plot and visually check what is the right value of K.
+
+
+3. Generate weights as a KxN matrix where K is the number of eigenfaces and N is the number of samples.
+
+4. Find a match with a query image
+
+ i. Project the query image into K-dimensional space
+
+ii. compute the Euclidean distance of the query image with all the images already registered in the system
+
+iii. Select the minimum distance (index of the min distance) (argmin)
+
+
+Check this link:
+https://scikit-learn.org/stable/auto_examples/decomposition/plot_faces_decomposition.html#sphx-glr-auto-examples-decomposition-plot-faces-decomposition-py
+
+
+Project-2
+-----------
+Wrong problem statement given! No dataset related to Speech Classification given.
+
+
+Project-3
+-----------
+To be discussed in the next class
+
+
+Project-4
+----------
+Already done in the class.
+Please check the class demo on EFA.
+
+++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+Related Resources:
+-------------------
+1. Mean-shift Clustering in Sklearn
+https://scikit-learn.org/stable/modules/generated/sklearn.cluster.MeanShift.html
+
+2. The Database of Faces 
+https://cam-orl.co.uk/facedatabase.html
+
+Kaggle Dataset Link:
+https://www.kaggle.com/datasets/kasikrit/att-database-of-faces?resource=download
+
+
+3. Hands-On Tutorial on Mean Shift Clustering Algorithm
+https://analyticsindiamag.com/hands-on-tutorial-on-mean-shift-clustering-algorithm/
+
