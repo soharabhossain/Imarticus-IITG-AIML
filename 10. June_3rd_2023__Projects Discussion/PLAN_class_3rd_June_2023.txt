@@ -1,0 +1,39 @@
+3rd June, 2023
+---------------
+
+Projects Discussion
+---------------------
+
+1. Project-1 -- Discussion/Solution
+Face Feature Extraction (EigenFace - PCA) - algorithm discussed on 28th May.
+(solution to be discussed today)
+
+
+Haar Cascase >> Solving Face Detection Problem
+  > Part-1: Face Detection (In a bigger image, which part of the image contains the facial regions) >> Sub-matrix (some features of a human face) >> HAAR Cascade
+
+
+How to recognize the face?
+  > Part-2: Face Recognition >> knowing the identity of the person (who the person is).
+
+Recognition?
+
+1. Use the bounding rectangle coordinates and crop the images (sub matrix) and create a database of training images. Do labeling of the images.
+
+2. Apply PCA and rest of the steps will be the same.
+
+
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+
+
+Links to Relevant Resources
+---------------------------
+1. Face Detection using Haar Cascades
+https://docs.opencv.org/3.1.0/d7/d8b/tutorial_py_face_detection.html#gsc.tab=0
+
+2. OBJECT DETECTION : FACE DETECTION USING HAAR CASCADE CLASSFIERS
+https://www.bogotobogo.com/python/OpenCV_Python/python_opencv3_Image_Object_Detection_Face_Detection_Haar_Cascade_Classifiers.php
+
