@@ -26,14 +26,16 @@ Recognition?
 
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-
-
-
 Links to Relevant Resources
 ---------------------------
-1. Face Detection using Haar Cascades
+1. Faces recognition example using eigenfaces and SVM
+https://scikit-learn.org/stable/auto_examples/applications/plot_face_recognition.html#sphx-glr-auto-examples-applications-plot-face-recognition-py
+
+2. Face Detection using Haar Cascades
 https://docs.opencv.org/3.1.0/d7/d8b/tutorial_py_face_detection.html#gsc.tab=0
 
-2. OBJECT DETECTION : FACE DETECTION USING HAAR CASCADE CLASSFIERS
+3. OBJECT DETECTION : FACE DETECTION USING HAAR CASCADE CLASSFIERS
 https://www.bogotobogo.com/python/OpenCV_Python/python_opencv3_Image_Object_Detection_Face_Detection_Haar_Cascade_Classifiers.php
+
+
 
