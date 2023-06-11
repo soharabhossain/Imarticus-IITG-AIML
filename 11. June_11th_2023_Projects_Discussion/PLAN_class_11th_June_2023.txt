@@ -1,0 +1,157 @@
+11th June, 2023
+----------------
+
+Projects Discussion
+---------------------
+
+
+1. Project-2 -- Discussion/Solution
+Speech Classification - Spoken Digits Recognition
+(to be discussed today)
+
+Recognize the spoken numerals (0, 1, 2...9) 
+
+Audio signal 
+
+Continuous signal (time series)
+Sampling (how frequently we take the samples of the signal)
+Quantization ()
+
+
+Amplitude vs Time
+
+Analyzing audio to extract features >> 
+
+
+Image/Audio >> Signal
+
+Spatial domain processing of images (time domain)
+Frequency domain processing of images >> FFT
+
+3 sec audio
+
+Feature Extraction from Audio:
+
+MFCC (Mel Frequency Cepstral Coefficients)
+
+
+Human auditory range : 20Hz to 20kHz
+
+500 Hz and 1000 Hz (low frequency)
+ 10000 Hz and 10,500 Hz
+
+
+
+MFCC
+ > Pre-emphasis
+ > Framing
+ > Windowing
+ > FFT
+ > Mel Filterbank
+ > Logarithm
+ > DCT
+
+> numeric vectors
+
+ >> Apply classifier (ML)
+
+
+
+
+2. Project-3 -- Discussion/Solution
+Hashing Querying in Face Datasets
+(to be discussed today)
+
+
+pHash
+ >> Re-scale the image 8x8
+ >> Convert the image to gray-scale
+ >> Claculate the DCT of a 8x8 block
+ >> Compute average DCT
+ >> Compute the binary DCT block (0 or 1)
+ >> Compute a hash by travering the DCT block
+
+
+Image Matching using Image Hash
+>> Knowledgebase (KB)
+
+Given a query image >> compute the pHash of that image
+ >> comaprison/matching with all the already registered faces in the KB (image hashes)
+
+
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+Class Notes:
+------------
+
+
+
+Perceptual Image Hashing (pHash)
+---------------------------------
+pHash is a simple algorithm that calculates image hash based on the DCT values of the image. 
+The algorithm involves the following steps:
+
+i. Re-scale image — Re-scale the image to multiples of 4 like 8*8, 32*32, etc.
+
+ii. Convert to Gray-scale image.
+
+iii. Calculate DCT block for 8*8 or 32*32 image.
+
+iv. Compute average DCT value excluding the value at (0, 0) as it influences larger deviation in computing average.
+
+v. Compute binary DCT block by setting entries either 0 or 1 by comparing average value (if value > average then 1 else 0).
+
+vi. Construct hash by traversing the binary DCT block from left to right and top to bottom. As values are only 0 or 1, the hash can be stored in a 64-bit integer for 8*8 DCT block.
+
+
+MFCC
+-----
+MFCC stands for Mel Frequency Cepstral Coefficients. 
+It is a feature extraction technique widely used in audio signal processing and speech recognition. 
+MFCCs capture the essential characteristics of an audio signal by representing its spectral content in a compact and discriminative manner.
+
+The process of computing MFCC involves several steps:
+
+Pre-emphasis: The audio signal is passed through a pre-emphasis filter to emphasize higher frequencies and balance the spectrum.
+
+Framing: The pre-emphasized signal is divided into short frames of typically 20-40 milliseconds, with a small overlap between consecutive frames.
+
+Windowing: Each frame is multiplied by a windowing function, such as the Hamming window, to reduce spectral leakage.
+
+Fast Fourier Transform (FFT): The Fourier Transform is applied to each frame to convert the time-domain signal into the frequency-domain representation.
+
+Mel Filterbank: A set of triangular filters on the Mel scale is applied to the magnitude spectrum to capture the perceptual characteristics of human hearing. These filters are spaced more closely at lower frequencies and wider apart at higher frequencies.
+
+Logarithm: The logarithm of the filterbank energies is taken to compress the dynamic range and mimic the human perception of loudness.
+
+Discrete Cosine Transform (DCT): The DCT is applied to decorrelate the filterbank coefficients and obtain the final MFCCs.
+
+The resulting MFCCs form a compact representation of the audio signal, capturing important features related to its spectral content. They are commonly used as input features in various applications, including speech recognition, speaker identification, and music genre classification, among others.
+
+
+
+
+
+
+Links to Relevant Resources
+---------------------------
+1. LibRosa Library
+https://librosa.org/doc/main/index.html
+
+https://librosa.org/doc/main/generated/librosa.feature.mfcc.html
+
+2. Spoken Digits Data Source Github Link
+https://github.com/Ralireza/spoken-digit-recognition
+
+3. Understanding the Mel Spectrogram
+https://medium.com/analytics-vidhya/understanding-the-mel-spectrogram-fca2afa2ce53
+
+4. Image Search Engine using Image Hashing technique in Python
+https://medium.com/analytics-vidhya/image-search-engine-using-image-hashing-technique-in-python-e6749dacc8f7
+
+5. pHash: Determine whether 2 images are equal or not
+https://www.kaggle.com/code/franckepeixoto/phash-determine-whether-2-images-are-equal-or-not
+
