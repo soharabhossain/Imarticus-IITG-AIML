@@ -1,0 +1,191 @@
+17th & 18th June 2023
+--------------------
+
+17th June, Saturday
+-------------------
+Agenda:
+> Markov Process/Assumption
+> Hidden Markov Model (HMM)
+
+
+Sequential Data
+Some inherent notion of time
+> Stock price (time series)
+> Text generation (sequence of words)
+> Context (long range dependency)
+> Speech Recognition 
+
+----------------------------
+# Markov Process
+
+Transition Probabilities
+--------------------------
+Weathers represented by states
+
+        Sunny    Rainy   Cloudy 
+Sunny    0.5      0.1     0.4
+Rainy    0.1      0.6     0.3  
+Cloudy   0.4      0.5     0.1
+
+
+# Markov Assumption:
+The probability of moving to any particular state next depends on the current state and not on the previous states.
+
+# Markov Chain:
+
+i) Initial probability distribution
+Probability that the Markov chain will start in a certain state i. 
+
+ii) One or more states.
+
+iii) Transition probability distribution.
+
+
+Today is Monday: Sunny
+What's the probability that Wednesday will be cloudy?
+
+Probability of clody Wednesday:
+
+Sunny - Sunny (Tuesday) - Cloudy (Wednesday):  
+0.5 * 0.4 = 0.2
+
+Sunny - Rainy(Tuesday) - Cloudy(Wednesday):
+0.1 * 0.3 = 0.03
+
+Sunny - Cloudy(Tuesday) - Cloudy(Wednesday):
+0.4 * 0.1 = 0.04
+
+The total probability of a cloudy Wednesday:
+0.2 + 0.03 + 0.04 = 0.27
+
+
+# Hidden Markov Model:
+
+Hidden States (Q): Sunny, Rainy
+
+Observable States (O): Walk, Shop, Clean
+
+Transition Probability (transition from hidden state to hidden state)
+
+Emission Probabilities (Hidden state to observable state transtions)
+
+Initial probability distribution
+
+lambda =(A, B)
+
+A = Transition Matrix
+       Sunny Rainy
+Sunny  0.6   0.4
+Rainy  0.5   0.5
+
+
+B = Emission Matrix
+       Walk Shop Clean
+Sunny  
+Rainy
+
+
+----------------------------------------
+We try to solve three fundamental problems:
+
+1. Likelihood: Givenan HMM lambda=(A,B) and an observation sequence O, determine the likelihood P(O|lambda).
+
+2. Decoding: Given an observation sequence O and an HMM lambda=(A,B), discover the best hidden state sequence Q. (Viterbi) (Dynamic Programming)
+
+3. Learning: Given an observation sequence O and the set of states in the HMM, learn the HMM parameters A and B. 
+EM algorithm - Baum-Welch.
+
+
+Algorithm Design Techniques:
+> Divide and Conquer
+> Greedy methodology
+> Dynamic Programming
+  >> Longest Common Subsequence (LCS)
+  >> Binary Knapsack Problem (0/1/ integer knapsack)
+  >> Matrix Chain Multiplication
+
+
+
+NLP Tasks: 
+> Part of Speech (POS) Tagging
+ Example:
+ India   is   a  great country.
+   NN    VB  ART  ADJ   NN
+
+> Named Entity Recognition (NER)
+
+
+Dataset > Corpus >> Large collection of text (paragraph >> sentences >> sequence of words)
+
+
+Deep Learning - RNN > LSTM >> Transformer > attention
+
+Long-range dependency
+Example:
+Children who are playing in the park all the day are tired. 
+
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+18th June, Sunday 
+-----------------
+> Coding Example: 
+  Sequence/Text generation with Markov Chain and Random Walk
+
+> Coding Example: 
+  Implement a simple HMM with Multinomial-HMM
+
+> Coding Example: 
+  Implement a simple HMM with Gaussian-HMM
+
+> Coding Example: 
+  Part-of-Speech Tagging with HMM
+(did not get time to discuss)
+
+
+
+
+My name is Sherlock Holmes It is my business to know what other people do not know
+
+Example: Markov Chain for Text Generation
+
+ My    it  business   people   do
+     
+
+ name   Holmes    to    other   not
+
+
+ is     Sherlock    know   what
+
+
+
+
++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+Related Resources Links:
+------------------------
+
+1.Markov Chain NLP
+https://www.kaggle.com/code/orion99/markov-chain-nlp/notebook
+
+2. Data Source
+https://www.kaggle.com/datasets/idevji1/sherlock-holmes-stories
+
+3. Hidden Markov Models: Concepts, Examples
+https://vitalflux.com/hidden-markov-models-concepts-explained-with-examples/
+
+4. Hidden Markov Model — Part 1 of the HMM series
+https://medium.com/analytics-vidhya/hidden-markov-model-part-1-of-the-hmm-series-3f7fea28a08
+
+5. Baum-Welch algorithm for training a Hidden Markov Model — Part 2 of the HMM series
+https://medium.com/analytics-vidhya/baum-welch-algorithm-for-training-a-hidden-markov-model-part-2-of-the-hmm-series-d0e393b4fb86
+
+6. Viterbi algorithm for prediction with HMM — Part 3 of the HMM series
+https://medium.com/analytics-vidhya/viterbi-algorithm-for-prediction-with-hmm-part-3-of-the-hmm-series-6466ce2f5dc6
+
+
+7. HMM-Learn Library
+https://hmmlearn.readthedocs.io/en/latest/tutorial.html
+ 
