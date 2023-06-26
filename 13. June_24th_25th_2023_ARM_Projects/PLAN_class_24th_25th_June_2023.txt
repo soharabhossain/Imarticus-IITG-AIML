@@ -1,0 +1,236 @@
+24th & 25th June 2023
+--------------------
+
+24th June, Saturday
+-------------------
+
+Supervised Learning:
+--------------------
+Traning data:
+(X2, Y2), (X1, Y1), .......(Xn, Yn), (Xk, Yk)
+
+ML model < (X, Y)
+
+ > Classification problem (IRIS flower classification , target values Y are categorical )
+
+ > Regression problem (House selling price prediction)
+                      total sq ft. of the house (x)
+                      number of bedrooms
+                      proximity to a highway
+                      ........
+                   (target values, y are numeric and continuous data)
+
+
+ y_hat = constant + coeff * total sq ft. of the house 
+
+ Loss => MSE
+
+ y = c + mx (equation of a line)
+
+
+Trained Regression model to predict the price of a house:
+How have we  tarined this model?
+
+ y_hat = constant + coeff1 * total sq ft. of the house 
+                   + coeff2 * number of bedrooms
+                   + coeff2 * proximity to a highway
+                   + ....
+
+Test example:
+(X, Y)
+
+Inference
+(UX)
+
+
+-------------------------------------------------------------------
+
+
+Autoregressive
+
+The recent past may be a good indicator of the near future.
+
+Stock price today >> stock price tomorrow
+
+Time
+
+Auto >> comparing with self
+Regression >> predicting numeric/continuous values
+
+time >> t
+
+y(t+1) = constant + coff1 * y(t) + coff2 * y(t-1)
+
+An autoregressive(AR) process model is a time series variable expressed as a linear combination of its own past values.
+
+
+t = time period = monthly
+s(t+1) = constant + coff1 * s(t) + coff2 * s(t-1)
+
+
+s(t-1) >> s(t) >> s(t+1)
+
+-----------------------------------------------------------------
+
+AR (Auto Regressive)
+MA (Moving Average)
+ARMA (Auto Regressive Moving Average)
+
+
+Stationarity
+  > mean is constant
+  > variance is constant
+  > no seasonality
+
+Check for stationarity:
+ i) Visually inspect (plot)
+ ii) Global vs. local tests
+ iii) Statistical test (ADF - Augmented Dickey Fuller test)
+
+
+How to make the time series stationary?
+
+Perform differencing
+z(t) = y(t) - y(t-1)
+
+
+AR Model:
+AR(3)
+
+y(t) = beta_0 + beta_1 * y(t-1) + beta_2 * y(t-2) + beta_3 * y(t-3)
+
+
+
+MA Model:
+
+y(t) = mu + alpha_1 * error(t-1) + alpha_2 * error(t-2) + ....
+
+
+ARMA(1, 1) 
+
+y(t) = beta_0 + beta_1 * y(t-1) + alpha_1 * error(t-1) 
+
+
+
+ACF : autocorrelation function >> MA
+PACF: partial autocorrelation function >> AR
+
+
+Seasonality
+ > Repeating pattern over a period of an year 
+
+ARIMA (Auto Regressive Integrated Moving Average)
+SARIMA (Seasonal Auto Regressive Integrated Moving Average)
+
+
+Price of a Stock:
+-----------------
+Time/Day
+Open - High - Low - Close
+
+
+Unsupervised Learning
+---------------------
+(X1) (X2) ...... (Xn)
+
+
+Regression
+
+Autoregressive Process and Time Series
+
+ACF: Auto-Correlation Function
+PACF: Partial Auto-Correlation Function
+Bars are alternating and dying down suggests that the time seriws is a moving average model.
+ 
+AR Model: Auto Regressive Model
+MA Model: Moving Average Model 
+ARMA: Auto Regressive Moving Average
+ARIMA: Auto Regressive Integrated Moving Average
+Model selection for Time Series Analysis
+
+
+ARIMA
+------
+ARIMA model is characterized by 3 terms: p, d, q
+
+> Auto-Regressive (p) -> Number of autoregressive terms.
+‘p’ is the order of the ‘Autoregressive’ (AR) term, it refers to the number of lags of y to be used as predictors
+
+> Integrated (d) -> Number of nonseasonal differences needed for stationarity.
+The value of d is the minimum number of differencing needed to make the series stationary if the time series is already stationary, then d = 0
+
+> Moving Average (q) -> Number of lagged forecast errors in the prediction equation.
+‘q’ is the order of the ‘Moving Average’ (MA) term, it refers to the number of lagged forecast errors that should go into the ARIMA Model.
+
+
+
+Applications
+------------
+Stock price prediction
+Demand forecasting
+
+-----------------------------------------------------------------------------------
+
+
+25th June, Sunday 
+-----------------
+
+# Coding example - AR model selection with AIC/BIC
+# Coding examples on AR, ARIMA
+
+
+
+# Projects Discussions
+
+> Adaptive Thresholding (Done)
+
+> Image Segmentation with K-means
+  (Not discussed due to lack of time)
+
+
+
+
++++++++++++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+
+
+
+
+
+Related Resources Links:
+------------------------
+
+1. How to Model Time Series in Python
+https://towardsdatascience.com/how-to-model-time-series-in-python-9983ebbf82cf
+
+2. Time Series Forecasting with Autoregressive Processes
+https://towardsdatascience.com/time-series-forecasting-with-autoregressive-processes-ba629717401
+
+3. Advanced Time Series Analysis with ARMA and ARIMA
+https://towardsdatascience.com/advanced-time-series-analysis-with-arma-and-arima-a7d9b589ed6d
+
+4. Interpreting ACF and PACF Plots for Time Series Forecasting
+https://towardsdatascience.com/interpreting-acf-and-pacf-plots-for-time-series-forecasting-af0d6db4061c
+
+5. SKTIME - Python library for Time Series Analysis
+https://github.com/sktime/sktime
+
+
+6. Statistical forecasting: notes on regression and time series analysis
+https://people.duke.edu/~rnau/411home.htm
+
+7. Time series analysis with statsmodels
+https://www.statsmodels.org/stable/generated/statsmodels.tsa.arima.model.ARIMA.html
+
+
+8. Image Thresholding
+https://docs.opencv.org/4.x/d7/d4d/tutorial_py_thresholding.html
+
+
+
+
+
+
+ 
