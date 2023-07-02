@@ -1,0 +1,227 @@
+1st & 2nd July 2023
+--------------------
+
+1st July, Saturday
+-------------------
+
+Agenda:
+-------
+1. Introduction to Supervised Learning:
+   > Classification Problem
+   > Regression Problem
+
+
+
+Machine Learning:
+  i) Learning from Data
+  ii) Learn a function/model f(x) representing a relation with y; define a Loss function and optimize the function to get the best possible estimate of the model parameters.
+
+
+(X, Y) > supervised learning
+       > X => Y (classification/regression)
+
+Training data: contain n number samples
+(features, target label)
+
+(x1, y1) , (x2, y2) ..... (xn, yn)
+
+
+IRIS flower classification problem:
+Setosa, Versicolor (Binary classification)
+
+Setosa => 0
+Versicolor = > 1
+
+Training Data (CSV):
+features     petal_length    petal_width   sepal_length    sepal_width 
+        x1 = [3.5,           2.9,          4.7,               4.2 ]
+        y1 = 0 (setosa)
+
+
+Machine Learning:
+Learn a function f(x) => y_hat
+
+-------------------------------------------------------------------------
+
+Model Equation (Logistic Regression):
+Solving a Classification Problem:
+f(x) = beta_0 + beta_1 * x => the probability of class being 1
+
+     if f(x) >= threshold then y_pred=1 [output class is 1 (versicolor)]
+     otherwise, y_pred = 0 [output class is o (setosa)]
+
+ 0 <= f(x) <= 1 (sigmoid function)
+ threshold= 0.5
+
+threshold is helping us to convert the output of the ML model to some category (for classification problem target output is categorical)
+
+
+Model equation decides the type of the ML algorithm.
+
+-----------------------------------------------------------
+
+Solving a Regression Problem:
+Linear Regression
+
+f(x) = beta_0 + beta_1 * x 
+     = > numeric score
+     = > predicted output of the model
+
+
+-------------------------------------------------------------------------
+
+
+All the data we have collected: D
+
+Subset of D as Training Data (TrD): 70% of D
+Subset of D as Testing Data (TsD): 20% of D
+
+Subset of D as Validation Data (VD): 10% of D
+(to solve te overfitting problem)
+
+
+Generalization (model performance is good on unseen data)
+           
+Training:
+
+Repetitive/iterative process                           
+
+Training samples represented as (xi, yi) from TrD, for i=1 to n
+ Compute error for sample xi: 
+    > compute error on invidual sample (xi, yi)
+    > f(xi) => yi_hat (prediction) = 0.7
+    > error for sample xi: 
+        error_i = (yi_pred - yi_true) 
+
+Total error/Loss: sum (error_i) for i = 1 to n
+
+Optimize the loss function with respect to the model parameters (iterative process).
+
+(Optimization algorithm - Gradient Descent algorithm)
+Terminating condition:
+  > Total loss is less than a predefined threshold
+  > Number of iternations (n_iter)
+
+
+Testing:
+Test the performance of the Trained Model with TsD.
+
+
+Inferencing:
+New sample arrives
+
+----------------------------------------------------------------
+
+2. Generative vs. Discriminative Models
+
+ > Generative model: Learning the distribution from which data has been derived
+distribution of class Setosa
+distribution of class Versicolor
+
+Bayesian approach >> MAP - Prior probability
+
+ > Discriminative model: Learn a decision boundary that seperates the two classes Setosa and Versicolor.
+By computing error of the model.
+Frequentist approach >> MLE
+
+----------------------------------------------------------------
+
+3. Different approaches to Supervised ML
+
+> Logistic Regression
+
+ > Linear Regression > Sigmoid 
+
+> K-Nearest Neighbours Classifier
+
+> Support Vector Machine (margin)
+
+> Decision Tree Classification
+
+> Ensemble : Random Forest Classifier
+
+> Artificial Neural Network (ANN) : Multi-Layer Perceptron (MLP)
+
+----------------------------------------------------------------
+
+4. Performance Measures of Classification Models
+
+ > Confusion Matrix
+ > True Positive
+ > False Positive
+ > True Negative
+ > False Negative 
+
+> Accuracy
+
+> Precision
+> Recall
+> F1-score
+
+> ROC Curve and AUC
+
+----------------------------------------------------------------
+
+5. Coding Demo - Classification Metrics
+
+
+-----------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------
+
+
+2nd July, Sunday 
+-----------------
+
+Agenda:
+-------
+
+# Coding Demo - ROC curve and AUC
+
+# Bayesian Classification Theory with Example
+
+# Coding Demo - Naive-Bayes-Classifier on Dummy Data
+
+
+# Coding Demo - Loan Repayment Prediction with Naive-Bayes-Classifier
+(Given as Home Assignment)
+
+
+# Projects Discussions
+> Image Segmentation with K-means
+  (Not discussed due to lack of time)
+  
+ 
++++++++++++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+Related Resources Links:
+------------------------
+
+1. Discriminative vs. Generative
+http://primo.ai/index.php?title=Discriminative_vs._Generative
+
+2. Generative vs. Discriminative Model 
+https://iq.opengenus.org/generative-vs-discriminative-model/ 
+
+3. MLE, MAP and Bayesian Inference
+https://towardsdatascience.com/mle-map-and-bayesian-inference-3407b2d6d4d9
+
+4. ROC Curve
+https://medium.com/@data.science.enthusiast/auc-roc-curve-ae9180eaf4f7
+
+5. A Gentle Introduction to Maximum a Posteriori (MAP) for Machine Learning
+https://machinelearningmastery.com/maximum-a-posteriori-estimation/
+
+6. Classification Metrics
+https://en.wikipedia.org/wiki/Confusion_matrix
+
+7. Naive Bayes classifier
+https://en.wikipedia.org/wiki/Naive_Bayes_classifier
+
+8. ROC Curve & AUC
+https://hrngok.github.io/posts/roc%20curve%20%26%20auc/
+
+9. ROC curves and Area Under the Curve explained
+https://www.dataschool.io/roc-curves-and-auc-explained/
+
+
