@@ -1,0 +1,142 @@
+8th & 9th July 2023
+--------------------
+
+8th July, Saturday
+-------------------
+
+Agenda:
+-------
+1. Introduction to Logistic Regression
+    >> Linear Regression to Logistic Regression
+    >> Odds ratio >> Logit >> Sigmoid function
+    >> Optimization
+ 
+
+
+Regression: output variable is numeric and continuous
+ Predict the selling price of a house
+ x1: total sq. ft. area of the house
+ x2: number of bed rooms
+ x3: crime rate in the locality
+ 
+ y = f(x) = beta_0 + beta_1*x1 + beta_2*x2
+ y = f(x) = 500 + 200*x1 + 30*x2 
+
+
+LR is a Binary Classifier
+
+Multi-class Classification Problem
+
+Class 1, 2, 3
+
+Once-vs-all (one-vs-rest)
+
+LR -1 : Class 1 vs. Class 2 & 3
+LR -2 : Class 2 vs. Class 1 & 3
+LR -3 : Class 3 vs. Class 1 & 2
+
+[0.2  0.3  0.5]
+
+Binary outcome y = {0, 1}
+
+Training Data N samples
+>> Binomial Distribution
+
+Assumption: independence of samples
+
+sample1 > y1=0
+
+sample2 > y1=1
+
+We just pick one sample
+>>
+
+
+Classification: output variable is categorical
+
+
+2. Coding Demo: Solving a Multi-class Classification problem with LR (IRIS dataset)
+
+3. Coding Demo: Solving a Binary Classification problem with LR (PIMA Indian Diabetes Dataset)
+
+
+ 
+
++++++++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++++++++
+
+9th July, Sunday
+-------------------
+
+Agenda:
+-------
+
+1. Introduction to Perceptron
+  > Learning 
+  > Decision boundary
+  > Limitations
+
+
+2. Implementing Perceptron step-by-step - solving a Binary Classification Problem
+
+3. Coding Demo: Solving a Binary Classification problem with Perceptron
+
+4. Coding Demo: Solving a Multi-class Classification
+
+-------------------------------------------------------------------------------------
+
+Artificial Intelligence: Simulate human intelligence in artificial device. 
+
+
+
+Computer?
+
+ Task1: Playing Chess
+
+ Rules >> 2D array/matrix 
+ >> computer algorithm >> computer program 
+ 
+
+ Task2: Understanding a language (conversation)
+ Grammar >> rules >> syntax
+ Meaning >> semantics
+ Context
+
+
+ Machine Learning 
+ >> Hand-crafted features (human in the loop)
+ >> Try to extract features from data samples
+ >> These features (numeric vectors) => ML model
+
+
+ Artificial Neural Network => Multi-Layerd Feed Forward Network (MLFFN) => Multi-layered Perceptron (MLP)
+ 
+ Deep Learning
+
+ Feature representation (automatic feature extraction)
+
+
+
+------------------------------------------------------------
+
+Perceptron
+----------
+Perceptron is the simplest type of artificial neural network.
+
+It is a model of a single-neuron that can be used for two-class classification problems and provides the foundation for later developing much larger networks.
+ 
+
++++++++++++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+Related Resources Links:
+------------------------
+
+1. Sklearn - Logistic Regression 
+https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LogisticRegression.html
+
+2. Sklearn - Perceptron
+https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.Perceptron.html
+ 
+
+
